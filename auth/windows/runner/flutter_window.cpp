@@ -40,6 +40,12 @@ bool FlutterWindow::OnCreate() {
   return true;
 }
 
+void MethodChannelHandler(const std::string& method) {
+    if (method == "disableScreenshots") {
+        DisableScreenRecording();
+    }
+}
+
 void FlutterWindow::OnDestroy() {
   if (flutter_controller_) {
     flutter_controller_ = nullptr;
