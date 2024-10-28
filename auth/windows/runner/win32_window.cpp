@@ -249,6 +249,12 @@ Win32Window::MessageHandler(HWND hwnd,
   return DefWindowProc(window_handle_, message, wparam, lparam);
 }
 
+void MethodChannelHandler(const std::string& method) {
+    if (method == "disableScreenshots") {
+        DisableScreenRecording();
+    }
+}
+
 void Win32Window::Destroy()
 {
   OnDestroy();
